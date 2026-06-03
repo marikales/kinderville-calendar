@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinderville · Academic Calendar 2026–2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Geologica:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --petrol:#1C7066;
+    --mint:#36A393;
+    --orange:#F68C50;
+    --yellow:#FFCB05;
+    --ink:#34403c;
+    --hair:#e7e5de;
+    --cardfill:#F8FAF9; --cardborder:#E7ECE9;
+    --mintfill:#CDE7DF; --minttext:#175c54;
+    --goldfill:#FBEDC2; --goldtext:#866713;
+    --peachfill:#F8DECA; --peachtext:#B4571B;
+    --breakfill:#ECEEEA; --breaktext:#9aa39e;
+    --weekend:#d39a76;
+    --modring:#4E9486; --parring:#C96A5C;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:#e4e7e4;font-family:'Albert Sans',-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+       color:var(--ink);-webkit-font-smoothing:antialiased;padding:24px 0}
+  .hint{max-width:794px;margin:0 auto 14px;font-size:12px;color:#5d6b66;text-align:center;letter-spacing:.2px}
+  .hint b{color:var(--petrol)}
+
+  /* ===== A4 SHEET ===== */
+  .page{width:794px;min-height:1123px;margin:0 auto;background:#fff;position:relative;overflow:hidden;
+        box-shadow:0 12px 60px rgba(0,0,0,.16);display:flex;flex-direction:column;padding:40px 44px 0}
+  .bg{position:absolute;border-radius:50%;z-index:0;pointer-events:none}
+  .bg1{width:280px;height:280px;background:#f4f8f6;right:-120px;top:150px}
+  .bg2{width:180px;height:180px;background:#fbf4ea;left:-100px;bottom:150px}
+  .inner{position:relative;z-index:1;display:flex;flex-direction:column;flex:1}
+
+  /* ===== HEADER ===== */
+  .head{display:flex;justify-content:space-between;align-items:flex-start}
+  .logo{height:58px;width:auto;display:block}
+  .logo-fb{font-family:'Geologica';font-weight:700;font-size:22px;letter-spacing:3px;color:var(--petrol)}
+  .head .meta{text-align:right;font-size:10px;letter-spacing:2.5px;color:#9aa7a2;font-weight:600;text-transform:uppercase;padding-top:5px}
+  .head .meta b{display:block;color:var(--petrol);font-weight:600;letter-spacing:2px;margin-top:2px}
+
+  .titlewrap{display:flex;justify-content:space-between;align-items:baseline;margin-top:22px;
+             padding-bottom:14px;border-bottom:1px solid var(--hair)}
+  .titlewrap h1{font-family:'Geologica';font-weight:500;font-size:28px;letter-spacing:6px;
+                text-transform:uppercase;color:var(--ink);margin:0}
+  .titlewrap .yrs{font-family:'Geologica';font-weight:600;font-size:19px;color:var(--petrol);letter-spacing:1px;white-space:nowrap}
+  .titlewrap .yrs small{font-family:'Albert Sans';font-weight:500;font-size:10px;letter-spacing:1.5px;color:#a7b0ab;margin-left:8px}
+
+  /* ===== MONTHS (cards) ===== */
+  .months{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;padding:20px 0 4px}
+  .month{background:var(--cardfill);border:1px solid var(--cardborder);border-radius:13px;
+         padding:11px 11px 12px;box-shadow:0 2px 6px rgba(20,70,64,.05)}
+  .month h3{font-family:'Geologica';font-weight:600;font-size:11.5px;color:var(--petrol);margin:0 0 8px;
+            letter-spacing:1.5px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:baseline}
+  .month h3 span{color:#c3cdc8;font-weight:400;font-size:9.5px;letter-spacing:1px}
+  table{width:100%;border-collapse:collapse;table-layout:fixed}
+  th{font-size:8px;font-weight:600;color:#b4bdb8;padding:0 0 5px;letter-spacing:.3px;text-transform:uppercase}
+  th.we{color:var(--weekend)}
+  td{padding:1.5px}
+  .cell{position:relative;height:23px;display:flex;align-items:center;justify-content:center;
+        border-radius:6px;font-size:11px;font-weight:500;color:#5b6863;padding-bottom:3px}
+  .study{background:var(--mintfill);color:var(--minttext);font-weight:700}
+  .training{background:var(--goldfill);color:var(--goldtext);font-weight:600}
+  .holiday{background:var(--peachfill);color:var(--peachtext);font-weight:600}
+  .closed{background:var(--breakfill);color:var(--breaktext)}
+  .weekend{background:transparent;color:var(--weekend)}
+  .cell.mod{box-shadow:inset 0 0 0 1.5px var(--modring)}
+  .cell.par{box-shadow:inset 0 0 0 2px var(--parring)}
+  .empty{background:transparent}
+  .markers{position:absolute;bottom:2px;left:0;right:0;display:flex;justify-content:center;gap:2.5px;line-height:0}
+  .mk{width:4.5px;height:4.5px;border-radius:50%}
+  .mk.cel{background:var(--yellow)}
+
+  /* ===== LEGEND ===== */
+  .legend{display:flex;flex-wrap:wrap;gap:9px 22px;padding:15px 0 0;margin-top:10px;
+          border-top:1px solid var(--hair);font-size:10px;font-weight:500;color:#5e6c67;letter-spacing:.2px}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .sw{width:15px;height:15px;border-radius:4px;flex:0 0 auto}
+  .ring-mod{width:15px;height:15px;border-radius:4px;box-shadow:inset 0 0 0 2px var(--modring);flex:0 0 auto}
+  .ring-par{width:15px;height:15px;border-radius:4px;box-shadow:inset 0 0 0 2px var(--parring);flex:0 0 auto}
+  .dt{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
+
+  /* ===== KEY DATES ===== */
+  .keys{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:18px 0 10px}
+  .keys h4{font-family:'Geologica';font-weight:600;font-size:10px;color:var(--petrol);margin:0 0 8px;
+           text-transform:uppercase;letter-spacing:2.5px}
+  .keys ul{margin:0;padding:0;list-style:none;font-size:9.5px;line-height:1.45;color:#56635e}
+  .keys li{padding:2.5px 0;display:flex;gap:10px;border-bottom:1px solid #f1f0ec}
+  .keys li:last-child{border-bottom:none}
+  .keys li b{color:var(--petrol);font-weight:600;white-space:nowrap;min-width:92px}
+
+  /* ===== FOOTER ===== */
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;
+        padding:15px 0 28px;border-top:1px solid var(--hair);font-size:10px;letter-spacing:1px;color:#8a958f}
+  .foot .sl{font-family:'Geologica';font-weight:500;font-size:11px;letter-spacing:3px;color:var(--petrol);text-transform:uppercase}
+  .foot .rt{text-align:right;letter-spacing:1.2px}
+  .foot .rt b{color:var(--ink);font-weight:600}
+
+  @media print{
+    @page{size:A4 portrait;margin:0}
+    body{background:#fff;padding:0}
+    .hint{display:none}
+    .page{box-shadow:none;width:210mm;min-height:297mm}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<div class="hint">Печать в PDF: <b>Cmd+P → «Сохранить как PDF» → A4, поля «Нет», галочка «Графика фона»</b> &nbsp;·&nbsp; для логотипа сохраните <b>logo.png</b> рядом с этим файлом</div>
+
+<div class="page">
+  <span class="bg bg1"></span><span class="bg bg2"></span>
+  <div class="inner">
+
+    <!-- HEADER -->
+    <div class="head">
+      <img class="logo" src="logo.png" alt="Kinderville — School for Future"
+           onerror="this.style.display='none';document.getElementById('lfb').style.display='block'">
+      <div class="logo-fb" id="lfb" style="display:none">KINDERVILLE NOVA</div>
+      <div class="meta">International School<b>Primary · Year 1–6</b></div>
+    </div>
+
+    <div class="titlewrap">
+      <h1>Academic Calendar</h1>
+      <div class="yrs">2026 – 2027<small>B.E. 2569 / 2570</small></div>
+    </div>
+
+    <!-- MONTHS -->
+    <div class="months" id="cal"></div>
+
+    <!-- LEGEND -->
+    <div class="legend">
+      <span><i class="sw" style="background:var(--mintfill)"></i> Study days · Modules I–V</span>
+      <span><i class="sw" style="background:var(--goldfill)"></i> Teachers Development Days (no students)</span>
+      <span><i class="sw" style="background:var(--peachfill)"></i> Public holiday</span>
+      <span><i class="sw" style="background:var(--breakfill)"></i> School break</span>
+      <span><i class="ring-mod"></i> First day of module</span>
+      <span><i class="dt" style="background:var(--yellow)"></i> Celebration</span>
+      <span><i class="ring-par"></i> Parents invited</span>
+    </div>
+
+    <!-- KEY DATES -->
+    <div class="keys">
+      <div>
+        <h4>Breaks &amp; closures</h4>
+        <ul>
+          <li><b>Aug 24–28</b><span>Teachers Development Days (no students)</span></li>
+          <li><b>Oct 12–16</b><span>Autumn break · King Bhumibol Day Oct 13</span></li>
+          <li><b>Oct 19</b><span>Teachers Development Day</span></li>
+          <li><b>Dec 4–5</b><span>Bridge holiday · King's Birthday</span></li>
+          <li><b>Dec 21 – Jan 3</b><span>Winter break · Jan 4 Teachers Development</span></li>
+          <li><b>Feb 15–19</b><span>February break</span></li>
+          <li><b>Apr 12–20</b><span>Spring break · Songkran · 19–20 Teachers Development</span></li>
+          <li><b>Jun 3</b><span>Queen Suthida's Birthday</span></li>
+          <li><b>Jun 28–30</b><span>Teachers Development Days (year wrap-up)</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Events &amp; celebrations</h4>
+        <ul>
+          <li><b>Sep 1</b><span>Knowledge Day · Module I begins</span></li>
+          <li><b>Oct 30</b><span>Halloween</span></li>
+          <li><b>Nov 25</b><span>Loy Krathong</span></li>
+          <li><b>Dec 17</b><span>Parents' Orientation (no classes)</span></li>
+          <li><b>Dec 18</b><span>New Year celebration (with parents)</span></li>
+          <li><b>Jan 15</b><span>Wai Kru · Teachers' Day</span></li>
+          <li><b>Apr 9</b><span>Parents' Orientation (no classes)</span></li>
+          <li><b>Jun 18</b><span>Graduation · parents invited</span></li>
+          <li><b>Jun 25</b><span>End of Academic Year</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="foot">
+      <span class="sl">Kinderville Nova</span>
+      <span class="rt"><b>kindervilleschool.com</b> &nbsp;·&nbsp; Phuket, Thailand</span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const special = {
+  '2026-08-31':{label:"Parents' Orientation (no classes)", type:'closed', parents:true},
+  '2026-09-01':{label:'Knowledge Day · Module I begins', mod:true, cel:true},
+  '2026-10-13':{label:'King Bhumibol Memorial Day', type:'holiday'},
+  '2026-10-19':{label:'Teachers Development Day (no students)', type:'training'},
+  '2026-10-20':{label:'Module II begins', mod:true},
+  '2026-10-30':{label:'Halloween', cel:true},
+  '2026-11-25':{label:'Loy Krathong', cel:true},
+  '2026-12-04':{label:'Bridge Holiday', type:'holiday'},
+  '2026-12-05':{label:"King's Birthday / Father's Day", type:'holiday'},
+  '2026-12-17':{label:"Parents' Orientation (no classes)", type:'closed', parents:true},
+  '2026-12-18':{label:'New Year celebration (with parents)', cel:true, parents:true},
+  '2027-01-04':{label:'Teachers Development Day (no students)', type:'training'},
+  '2027-01-05':{label:'Module III begins', mod:true},
+  '2027-01-15':{label:"Wai Kru · Teachers' Day", cel:true},
+  '2027-02-22':{label:'Module IV begins', mod:true},
+  '2027-04-09':{label:"Parents' Orientation (no classes)", type:'closed', parents:true},
+  '2027-04-21':{label:'Module V begins', mod:true},
+  '2027-06-03':{label:"Queen Suthida's Birthday", type:'holiday'},
+  '2027-06-18':{label:'Graduation (parents invited)', cel:true, parents:true},
+  '2027-06-25':{label:'End of Academic Year', cel:true},
+};
+
+function pad(n){return n<10?'0'+n:''+n}
+function dstr(y,m,d){return y+'-'+pad(m)+'-'+pad(d)}
+function inRange(s,a,b){return s>=a && s<=b}
+
+function baseClass(s,dow){
+  const weekend = (dow===0||dow===6);
+  if(inRange(s,'2026-08-24','2026-08-28')) return 'training';
+  if(s==='2026-10-19') return 'training';
+  if(s==='2027-01-04') return 'training';
+  if(inRange(s,'2027-04-19','2027-04-20')) return 'training';
+  if(inRange(s,'2027-06-28','2027-06-30')) return 'training';
+  if(weekend) return 'weekend';
+  if(inRange(s,'2026-10-12','2026-10-16')) return 'closed';
+  if(s==='2026-12-04') return 'closed';
+  if(inRange(s,'2026-12-21','2027-01-04')) return 'closed';
+  if(inRange(s,'2027-02-15','2027-02-19')) return 'closed';
+  if(inRange(s,'2027-04-12','2027-04-20')) return 'closed';
+  if(inRange(s,'2026-09-01','2027-06-25')) return 'study';
+  return 'weekend';
+}
+
+const monthNames=['','JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+
+function renderMonth(y,m){
+  const startDow = new Date(y,m-1,1).getDay();
+  const offset = (startDow===0)?6:startDow-1;
+  const daysInMonth = new Date(y,m,0).getDate();
+
+  let html = '<div class="month"><h3>'+monthNames[m]+' <span>'+y+'</span></h3><table><thead><tr>';
+  ['Mo','Tu','We','Th','Fr','Sa','Su'].forEach((d,i)=>html+='<th'+(i>=5?' class="we"':'')+'>'+d+'</th>');
+  html+='</tr></thead><tbody><tr>';
+
+  for(let i=0;i<offset;i++) html+='<td><div class="cell empty"></div></td>';
+
+  for(let d=1;d<=daysInMonth;d++){
+    const dow=new Date(y,m-1,d).getDay();
+    const s=dstr(y,m,d);
+    const sp=special[s]||{};
+    let cls=sp.type||baseClass(s,dow);
+    let extra=sp.parents?' par':(sp.mod?' mod':'');
+    const title=sp.label?(' title="'+sp.label+'"'):'';
+    let mk=sp.cel?'<span class="markers"><i class="mk cel"></i></span>':'';
+    html+='<td><div class="cell '+cls+extra+'"'+title+'>'+d+mk+'</div></td>';
+    if((offset+d)%7===0 && d!==daysInMonth) html+='</tr><tr>';
+  }
+  const used=(offset+daysInMonth)%7;
+  if(used!==0){for(let i=used;i<7;i++) html+='<td><div class="cell empty"></div></td>';}
+  html+='</tr></tbody></table></div>';
+  return html;
+}
+
+// August 2026 → July 2027 (12 months)
+let out='', y=2026, m=8;
+for(let i=0;i<12;i++){ out+=renderMonth(y,m); m++; if(m>12){m=1;y++;} }
+document.getElementById('cal').innerHTML=out;
+</script>
+</body>
+</html>
