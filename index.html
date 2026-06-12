@@ -141,7 +141,7 @@
           <li><b>Dec 24 – Jan 4</b><span>Winter break · Jan 4 day off</span></li>
           <li><b>Feb 15–19</b><span>February break · Teacher Dev Days 15–17</span></li>
           <li><b>Apr 9–10</b><span>Teacher Development Days (no students)</span></li>
-          <li><b>Apr 12–20</b><span>Spring break · Songkran · Apr 19 Teacher Dev</span></li>
+          <li><b>Apr 12–19</b><span>Spring break · Songkran · Apr 19 Teacher Dev</span></li>
           <li><b>Jun 3–4</b><span>Queen Suthida's Birthday · Bridge holiday</span></li>
           <li><b>Jun 26</b><span>Teachers Development Day — no school (year wrap-up · team building)</span></li>
         </ul>
@@ -155,7 +155,7 @@
           <li><b>Dec 17</b><span>Short study day · Parents' Orientation</span></li>
           <li><b>Dec 18</b><span>New Year celebration (with parents · no classes)</span></li>
           <li><b>Jan 15</b><span>Wai Kru · Teachers' Day</span></li>
-          <li><b>Apr 20</b><span>Parents' Orientation (no classes)</span></li>
+          <li><b>Apr 20</b><span>Short study day · Parents' Orientation</span></li>
           <li><b>Jun 25</b><span>Graduation · End of Academic Year (no classes · parents invited)</span></li>
         </ul>
       </div>
@@ -196,7 +196,7 @@ const special = {
   '2027-04-09':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2027-04-10':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2027-04-19':{label:'Teachers Development Day (no students)', type:'training'},
-  '2027-04-20':{label:"Parents' Orientation (no classes)", type:'closed', parents:true},
+  '2027-04-20':{label:"Short study day · Parents' Orientation", type:'short', parents:true},
   '2027-04-21':{label:'Module V begins', mod:true},
   '2027-06-03':{label:"Queen Suthida's Birthday", type:'holiday'},
   '2027-06-04':{label:'Bridge Holiday', type:'holiday'},
@@ -216,7 +216,7 @@ function baseClass(s,dow){
   if(s==='2026-12-04') return 'closed';
   if(inRange(s,'2026-12-21','2027-01-04')) return 'closed';
   if(inRange(s,'2027-02-15','2027-02-19')) return 'closed';
-  if(inRange(s,'2027-04-12','2027-04-20')) return 'closed';
+  if(inRange(s,'2027-04-12','2027-04-19')) return 'closed';
   if(inRange(s,'2026-09-01','2027-06-25')) return 'study';
   return 'weekend';
 }
