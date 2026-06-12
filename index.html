@@ -42,17 +42,22 @@
   .head .meta{text-align:right;font-size:10px;letter-spacing:2.5px;color:#9aa7a2;font-weight:600;text-transform:uppercase;padding-top:6px}
   .head .meta b{display:block;color:var(--petrol);font-weight:600;letter-spacing:2px;margin-top:2px}
 
-  .titlewrap{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;
+  .titlewrap{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px;
              padding-bottom:11px;border-bottom:1px solid var(--hair)}
   .titlewrap h1{font-family:'Geologica';font-weight:500;font-size:27px;letter-spacing:6px;
                 text-transform:uppercase;color:var(--ink);margin:0}
   .titlewrap .yrs{font-family:'Geologica';font-weight:600;font-size:19px;color:var(--petrol);letter-spacing:1px;white-space:nowrap}
   .titlewrap .yrs small{font-family:'Albert Sans';font-weight:500;font-size:10px;letter-spacing:1.5px;color:#a7b0ab;margin-left:8px}
 
+  .modstrip{display:flex;gap:5px;margin-top:9px}
+  .ms{border-radius:9px;padding:4px 10px 5px;background:var(--mintfill)}
+  .ms:nth-child(even){background:#EAF3EE}
+  .ms b{font-family:'Geologica';font-weight:600;font-size:8.5px;letter-spacing:1.2px;color:var(--petrol);display:block;text-transform:uppercase}
+  .ms span{font-size:7.6px;color:#54655f;font-weight:600;letter-spacing:.2px;white-space:nowrap}
   /* MONTHS */
-  .months{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:11px 0 0}
+  .months{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:8px 0 0}
   .month{background:var(--cardfill);border:1px solid var(--cardborder);border-radius:12px;
-         padding:11px 11px 12px;box-shadow:0 2px 6px rgba(20,70,64,.05)}
+         padding:10px 11px 10px;box-shadow:0 2px 6px rgba(20,70,64,.05)}
   .month h3{font-family:'Geologica';font-weight:600;font-size:11.5px;color:var(--petrol);margin:0 0 8px;
             letter-spacing:1.5px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:baseline}
   .month h3 span{color:#c3cdc8;font-weight:400;font-size:9.5px;letter-spacing:1px}
@@ -60,7 +65,7 @@
   th{font-size:8.5px;font-weight:600;color:#b4bdb8;padding:0 0 5px;letter-spacing:.3px;text-transform:uppercase}
   th.we{color:var(--weekend)}
   td{padding:1.5px}
-  .cell{position:relative;height:23px;display:flex;align-items:center;justify-content:center;
+  .cell{position:relative;height:22px;display:flex;align-items:center;justify-content:center;
         border-radius:6px;font-size:11px;font-weight:500;color:#5b6863;padding-bottom:2.5px}
   .study{background:var(--mintfill);color:var(--minttext);font-weight:700}
   .training{background:var(--goldfill);color:var(--goldtext);font-weight:600}
@@ -128,6 +133,14 @@
     <div class="titlewrap">
       <h1>Academic Calendar</h1>
       <div class="yrs">2026 – 2027<small>B.E. 2569 / 2570</small></div>
+    </div>
+
+    <div class="modstrip">
+      <div class="ms" style="flex:29"><b>Module I</b><span>1 Sep – 10 Oct · 29 days</span></div>
+      <div class="ms" style="flex:43"><b>Module II</b><span>19 Oct – 18 Dec · 43 days</span></div>
+      <div class="ms" style="flex:29"><b>Module III</b><span>5 Jan – 12 Feb · 29 days</span></div>
+      <div class="ms" style="flex:34"><b>Module IV</b><span>22 Feb – 9 Apr · 34 days</span></div>
+      <div class="ms" style="flex:45"><b>Module V</b><span>21 Apr – 25 Jun · 45 days</span></div>
     </div>
 
     <div class="months" id="cal"></div>
