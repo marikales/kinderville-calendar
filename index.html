@@ -142,8 +142,8 @@
           <li><b>Feb 15–19</b><span>February break · Teacher Dev Days 15–17</span></li>
           <li><b>Apr 9–10</b><span>Teacher Development Days (no students)</span></li>
           <li><b>Apr 12–20</b><span>Spring break · Songkran · Apr 19 Teacher Dev</span></li>
-          <li><b>Jun 3</b><span>Queen Suthida's Birthday</span></li>
-          <li><b>Jun 28–30</b><span>Teachers Development Days (year wrap-up)</span></li>
+          <li><b>Jun 3–4</b><span>Queen Suthida's Birthday · Bridge holiday</span></li>
+          <li><b>Jun 26</b><span>Teachers Development Day (year wrap-up · team building)</span></li>
         </ul>
       </div>
       <div>
@@ -200,7 +200,9 @@ const special = {
   '2027-04-20':{label:"Parents' Orientation (no classes)", type:'closed', parents:true},
   '2027-04-21':{label:'Module V begins', mod:true},
   '2027-06-03':{label:"Queen Suthida's Birthday", type:'holiday'},
+  '2027-06-04':{label:'Bridge Holiday', type:'holiday'},
   '2027-06-25':{label:'Graduation · End of Academic Year (parents invited)', cel:true, parents:true},
+  '2027-06-26':{label:'Teachers Development Day · Year wrap-up & team building (no students)', type:'training'},
 };
 
 function pad(n){return n<10?'0'+n:''+n}
@@ -210,7 +212,6 @@ function inRange(s,a,b){return s>=a && s<=b}
 function baseClass(s,dow){
   const weekend = (dow===0||dow===6);
   if(inRange(s,'2026-08-24','2026-08-28')) return 'training';
-  if(inRange(s,'2027-06-28','2027-06-30')) return 'training';
   if(weekend) return 'weekend';
   if(inRange(s,'2026-10-12','2026-10-16')) return 'closed';
   if(s==='2026-12-04') return 'closed';
