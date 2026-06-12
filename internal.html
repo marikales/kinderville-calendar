@@ -21,7 +21,7 @@
     --peachfill:#F8DECA; --peachtext:#B4571B;
     --breakfill:#ECEEEA; --breaktext:#9aa39e;
     --weekend:#d39a76;
-    --modring:#4E9486; --parring:#C96A5C;
+    --modring:#4E9486; --parring:#C96A5C; --meetring:#9C6BA3;
   }
   *{box-sizing:border-box}
   html,body{margin:0}
@@ -50,9 +50,9 @@
   .titlewrap .yrs small{font-family:'Albert Sans';font-weight:500;font-size:10px;letter-spacing:1.5px;color:#a7b0ab;margin-left:8px}
 
   /* MONTHS */
-  .months{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:11px 0 0}
+  .months{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;padding:9px 0 0}
   .month{background:var(--cardfill);border:1px solid var(--cardborder);border-radius:12px;
-         padding:11px 11px 12px;box-shadow:0 2px 6px rgba(20,70,64,.05)}
+         padding:10px 11px 10px;box-shadow:0 2px 6px rgba(20,70,64,.05)}
   .month h3{font-family:'Geologica';font-weight:600;font-size:11.5px;color:var(--petrol);margin:0 0 8px;
             letter-spacing:1.5px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:baseline}
   .month h3 span{color:#c3cdc8;font-weight:400;font-size:9.5px;letter-spacing:1px}
@@ -60,7 +60,7 @@
   th{font-size:8.5px;font-weight:600;color:#b4bdb8;padding:0 0 5px;letter-spacing:.3px;text-transform:uppercase}
   th.we{color:var(--weekend)}
   td{padding:1.5px}
-  .cell{position:relative;height:23px;display:flex;align-items:center;justify-content:center;
+  .cell{position:relative;height:22px;display:flex;align-items:center;justify-content:center;
         border-radius:6px;font-size:11px;font-weight:500;color:#5b6863;padding-bottom:2.5px}
   .study{background:var(--mintfill);color:var(--minttext);font-weight:700}
   .training{background:var(--goldfill);color:var(--goldtext);font-weight:600}
@@ -70,36 +70,42 @@
   .weekend{background:transparent;color:var(--weekend)}
   .cell.mod{box-shadow:inset 0 0 0 1.5px var(--modring)}
   .cell.par{box-shadow:inset 0 0 0 2px var(--parring)}
+  .cell.pmt{box-shadow:inset 0 0 0 2px var(--meetring)}
   .empty{background:transparent}
   .markers{position:absolute;bottom:2px;left:0;right:0;display:flex;justify-content:center;gap:2.5px;line-height:0}
   .mk{width:4.5px;height:4.5px;border-radius:50%}
   .mk.cel{background:var(--yellow)}
   .mk.exc{background:var(--orange)}
   .mk.ped{background:var(--petrol)}
+  .mk.reh{background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow)}
 
   /* LEGEND CARD (sits in the 12th grid slot) */
   .lgcard{display:flex;flex-direction:column}
-  .lgcard .lg{display:flex;flex-direction:column;gap:6px;margin-top:1px;font-size:9px;font-weight:500;color:#5e6c67}
+  .lgcard .lg{display:flex;flex-direction:column;gap:3.5px;margin-top:1px;font-size:8.5px;font-weight:500;color:#5e6c67}
   .lgcard .lg span{display:flex;align-items:center;gap:7px}
   .sw{width:13px;height:13px;border-radius:3px;flex:0 0 auto}
   .rg{width:13px;height:13px;border-radius:3px;flex:0 0 auto}
   .rg.mod{box-shadow:inset 0 0 0 2px var(--modring)}
   .rg.par{box-shadow:inset 0 0 0 2px var(--parring)}
+  .rg.pmt{box-shadow:inset 0 0 0 2px var(--meetring)}
   .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;margin:0 2.5px}
   .dot.cel{background:var(--yellow)}
 
   /* KEY DATES */
-  .keys{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:9px 0 3px}
+  .keys{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:7px 0 2px}
   .keys h4{font-family:'Geologica';font-weight:600;font-size:10.5px;color:var(--petrol);margin:0 0 5px;
            text-transform:uppercase;letter-spacing:2.5px}
-  .keys ul{margin:0;padding:0;list-style:none;font-size:9.5px;line-height:1.4;color:#56635e}
-  .keys li{padding:2px 0;display:flex;gap:10px;border-bottom:1px solid #f1f0ec}
+  .keys ul{margin:0;padding:0;list-style:none;font-size:9.5px;line-height:1.3;color:#56635e}
+  .keys li{padding:1px 0;display:flex;gap:10px;border-bottom:1px solid #f1f0ec}
   .keys li:last-child{border-bottom:none}
   .keys li b{color:var(--petrol);font-weight:600;white-space:nowrap;min-width:96px}
+  .keys{grid-template-columns:1fr 1fr 1fr;gap:14px}
+  .keys ul{font-size:8.6px}
+  .keys li b{min-width:64px}
 
   /* FOOTER */
   .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;
-        padding:12px 0 12px;border-top:1px solid var(--hair);font-size:10px;letter-spacing:1px;color:#8a958f}
+        padding:9px 0 10px;border-top:1px solid var(--hair);font-size:10px;letter-spacing:1px;color:#8a958f}
   .foot .sl{font-family:'Geologica';font-weight:500;font-size:11px;letter-spacing:3px;color:var(--petrol);text-transform:uppercase}
   .foot .rt{text-align:right;letter-spacing:1.2px}
   .foot .rt b{color:var(--ink);font-weight:600}
@@ -137,29 +143,44 @@
         <h4>School events</h4>
         <ul>
           <li><b>Sep 1</b><span>Knowledge Day · Module I begins</span></li>
-          <li><b>Oct 10 (Sat)</b><span>Electives Showcase I · Kinderville Initiation Ceremony — open event</span></li>
+          <li><b>Oct 10 (Sat)</b><span>Electives Showcase I · Initiation Ceremony — open, parents</span></li>
           <li><b>Oct 30</b><span>Halloween — internal</span></li>
           <li><b>Nov 25</b><span>Loy Krathong — internal</span></li>
-          <li><b>Dec 18</b><span>New Year performances — with parents</span></li>
+          <li><b>Dec 18</b><span>NY performances · electives results — parents</span></li>
           <li><b>Jan 15</b><span>Wai Kru · Teachers' Day — internal</span></li>
-          <li><b>Apr 9</b><span>Songkran celebration · Electives Showcase — internal</span></li>
-          <li><b>Jun 25</b><span>Graduation — with parents</span></li>
+          <li><b>Feb 12</b><span>Electives mini-event · exhibition (half-study)</span></li>
+          <li><b>Apr 9</b><span>Songkran · Electives Showcase — parents</span></li>
+          <li><b>Jun 25</b><span>Graduation · electives results — parents</span></li>
         </ul>
       </div>
       <div>
-        <h4>Excursions &amp; pedagogical actions</h4>
+        <h4>Excursions · meetings · rehearsals</h4>
         <ul>
-          <li><b>Sep 23</b><span>Electives selection closes</span></li>
-          <li><b>Dec 10–11</b><span>Excursions · split groups (half excursion / half lessons) · parent meetings</span></li>
-          <li><b>Dec 17</b><span>Rehearsal day (half-study) · Parents' Orientation</span></li>
+          <li><b>Aug 31</b><span>Parents' Orientation (no classes)</span></li>
+          <li><b>Dec 10–11</b><span>Excursions · split groups · parent meetings</span></li>
+          <li><b>Dec 17</b><span>Rehearsal (half-study) · Parents' Orientation</span></li>
           <li><b>Apr 1–2</b><span>Excursions · split groups · parent meetings</span></li>
-          <li><b>Apr 8</b><span>Rehearsal day (half-study)</span></li>
-          <li><b>Apr 20</b><span>Short study day · Parents' Orientation</span></li>
+          <li><b>Apr 8</b><span>Rehearsal (half-study)</span></li>
+          <li><b>Jun 24</b><span>Rehearsal (half-study)</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Electives cycle</h4>
+        <ul>
+          <li><b>Sep 1</b><span>Intro presentation (theory)</span></li>
+          <li><b>Sep 2–22</b><span>Trial period</span></li>
+          <li><b>Sep 23</b><span>Final choice · Modules I–II</span></li>
+          <li><b>Sep 24 – Oct 8</b><span>Prep #1 — 11 days: ~4 ×2/wk · ~6 ×3/wk</span></li>
+          <li><b>Oct 19 – Dec 15</b><span>Prep #2 — 41 days: ~16 ×2/wk · ~25 ×3/wk</span></li>
+          <li><b>Jan 5–8</b><span>Re-selection · Modules III–IV</span></li>
+          <li><b>Jan 11 – Feb 11</b><span>Prep #3 — 24 days: ~9 ×2/wk · ~14 ×3/wk</span></li>
+          <li><b>Feb 22 – Apr 8</b><span>Prep #4 — 34 days: ~13 ×2/wk · ~20 ×3/wk</span></li>
+          <li><b>Apr 21 – Jun 23</b><span>Prep #5 — 44 days: ~17 ×2/wk · ~26 ×3/wk</span></li>
         </ul>
       </div>
     </div>
 
-    <div class="foot"><div class="foot">
+    <div class="foot"><div class="foot"><div class="foot">
       <span class="sl">Kinderville Nova</span>
       <span class="rt"><b>kindervilleschool.com</b> &nbsp;·&nbsp; Phuket, Thailand</span>
     </div>
@@ -169,43 +190,52 @@
 
 <script>
 const special = {
-  '2026-08-31':{label:"Parents' Orientation (no classes)", type:'closed', parents:true},
-  '2026-09-01':{label:'Knowledge Day · Module I begins', mod:true, cel:true},
-  '2026-09-23':{label:'Electives selection closes', ped:true},
+  '2026-08-31':{label:"Parents' Orientation (no classes)", type:'closed', pmt:true},
+  '2026-09-01':{label:'Knowledge Day · Module I begins · Electives intro (theory)', mod:true, cel:true, ped:true},
+  '2026-09-02':{label:'Electives trial period begins (to Sep 22)', ped:true},
+  '2026-09-22':{label:'Electives trial period ends', ped:true},
+  '2026-09-23':{label:'Electives: final choice for Modules I–II', ped:true},
+  '2026-09-24':{label:'Electives: prep #1 begins (to Oct 8)', ped:true},
   '2026-10-10':{label:'Electives Showcase I · Kinderville Initiation Ceremony (open event)', cel:true, parents:true},
   '2026-10-12':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-10-13':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-10-14':{label:'Teacher Council / Development Day (no students)', type:'training'},
-  '2026-10-19':{label:'Module II begins', mod:true},
+  '2026-10-19':{label:'Module II begins · Electives: prep for Dec 18 (to Dec 15)', mod:true, ped:true},
   '2026-10-30':{label:'Halloween (internal event)', cel:true},
   '2026-11-25':{label:'Loy Krathong (internal event)', cel:true},
   '2026-12-04':{label:'Bridge Holiday', type:'holiday'},
   '2026-12-05':{label:"King's Birthday / Father's Day", type:'holiday'},
-  '2026-12-10':{label:'Excursion + lessons (split groups) · Parent meetings', type:'short', exc:true, parents:true},
-  '2026-12-11':{label:'Excursion + lessons (split groups) · Parent meetings', type:'short', exc:true, parents:true},
-  '2026-12-17':{label:"Rehearsal day (half-study) · Parents' Orientation", type:'short', ped:true, parents:true},
-  '2026-12-18':{label:'New Year performances (with parents · no classes)', type:'closed', cel:true, parents:true},
+  '2026-12-10':{label:'Excursion + lessons (split groups) · Parent meetings', type:'short', exc:true, pmt:true},
+  '2026-12-11':{label:'Excursion + lessons (split groups) · Parent meetings', type:'short', exc:true, pmt:true},
+  '2026-12-17':{label:"Rehearsal day (half-study) · Parents' Orientation", type:'short', reh:true, pmt:true},
+  '2026-12-18':{label:'New Year performances · Electives results (with parents · no classes)', type:'closed', cel:true, parents:true},
   '2026-12-21':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-12-22':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-12-23':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2027-01-04':{label:'Day off (school closed)', type:'closed'},
-  '2027-01-05':{label:'Module III begins', mod:true},
+  '2027-01-05':{label:'Module III begins · Electives re-selection (Jan 5–8)', mod:true, ped:true},
+  '2027-01-06':{label:'Electives re-selection', ped:true},
+  '2027-01-07':{label:'Electives re-selection', ped:true},
+  '2027-01-08':{label:'Electives re-selection', ped:true},
+  '2027-01-11':{label:'Electives: prep #3 begins (to Feb 11)', ped:true},
   '2027-01-15':{label:"Wai Kru · Teachers' Day (internal event)", cel:true},
+  '2027-02-12':{label:'Electives mini-event · exhibition (half-study)', type:'short', cel:true},
   '2027-02-15':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2027-02-16':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2027-02-17':{label:'Teacher Council / Development Day (no students)', type:'training'},
-  '2027-02-22':{label:'Module IV begins', mod:true},
-  '2027-04-01':{label:'Excursion + lessons (split groups) · Parent meetings', type:'short', exc:true, parents:true},
-  '2027-04-02':{label:'Excursion + lessons (split groups) · Parent meetings', type:'short', exc:true, parents:true},
-  '2027-04-08':{label:'Rehearsal day (half-study)', type:'short', ped:true},
-  '2027-04-09':{label:'Songkran celebration · Electives Showcase (no classes)', type:'closed', cel:true},
+  '2027-02-22':{label:'Module IV begins · Electives: prep #4 begins (to Apr 8)', mod:true, ped:true},
+  '2027-04-01':{label:'Excursion + lessons (split groups) · Parent meetings', type:'short', exc:true, pmt:true},
+  '2027-04-02':{label:'Excursion + lessons (split groups) · Parent meetings', type:'short', exc:true, pmt:true},
+  '2027-04-08':{label:'Rehearsal day (half-study)', type:'short', reh:true},
+  '2027-04-09':{label:'Songkran celebration · Electives Showcase (with parents · no classes)', type:'closed', cel:true, parents:true, ped:true},
   '2027-04-10':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2027-04-19':{label:'Teachers Development Day (no students)', type:'training'},
-  '2027-04-20':{label:"Short study day · Parents' Orientation", type:'short', parents:true},
-  '2027-04-21':{label:'Module V begins', mod:true},
+  '2027-04-20':{label:'Teachers Development Day (no students)', type:'training'},
+  '2027-04-21':{label:'Module V begins · Electives: prep #5 begins (to Jun 23)', mod:true, ped:true},
   '2027-06-03':{label:"Queen Suthida's Birthday", type:'holiday'},
   '2027-06-04':{label:'Bridge Holiday', type:'holiday'},
-  '2027-06-25':{label:'Graduation · End of Academic Year (parents invited · no classes)', type:'closed', cel:true, parents:true},
+  '2027-06-24':{label:'Rehearsal day (half-study)', type:'short', reh:true},
+  '2027-06-25':{label:'Graduation · Electives results (parents invited · no classes)', type:'closed', cel:true, parents:true},
   '2027-06-26':{label:'Teachers Development Day · Year wrap-up & team building (no students)', type:'training'},
 };
 
@@ -244,9 +274,9 @@ function renderMonth(y,m){
     const s=dstr(y,m,d);
     const sp=special[s]||{};
     let cls=sp.type||baseClass(s,dow);
-    let extra=sp.parents?' par':(sp.mod?' mod':'');
+    let extra=sp.parents?' par':(sp.pmt?' pmt':(sp.mod?' mod':''));
     const title=sp.label?(' title="'+sp.label+'"'):'';
-    let dots=(sp.cel?'<i class="mk cel"></i>':'')+(sp.exc?'<i class="mk exc"></i>':'')+(sp.ped?'<i class="mk ped"></i>':'');
+    let dots=(sp.cel?'<i class="mk cel"></i>':'')+(sp.reh?'<i class="mk reh"></i>':'')+(sp.exc?'<i class="mk exc"></i>':'')+(sp.ped?'<i class="mk ped"></i>':'');
     let mk=dots?'<span class="markers">'+dots+'</span>':'';
     html+='<td><div class="cell '+cls+extra+'"'+title+'>'+d+mk+'</div></td>';
     if((offset+d)%7===0 && d!==daysInMonth) html+='</tr><tr>';
@@ -266,9 +296,11 @@ const legendCard =
   +'<span><i class="sw" style="background:var(--breakfill)"></i>Break / no classes</span>'
   +'<span><i class="rg mod"></i>First day of module</span>'
   +'<span><i class="dot cel"></i>School event</span>'
+  +'<span><i class="dot" style="background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow)"></i>Rehearsal — event staff involved</span>'
   +'<span><i class="dot" style="background:var(--orange)"></i>Excursion</span>'
-  +'<span><i class="dot" style="background:var(--petrol)"></i>Pedagogical action</span>'
-  +'<span><i class="rg par"></i>Parents invited / open event</span>'
+  +'<span><i class="dot" style="background:var(--petrol)"></i>Pedagogical action / electives</span>'
+  +'<span><i class="rg par"></i>Parents — event / open</span>'
+  +'<span><i class="rg pmt"></i>Parents — meetings</span>'
   +'</div></div>';
 
 // August 2026 → June 2027 (11 months) + legend card = 12 grid slots
