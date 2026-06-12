@@ -21,7 +21,7 @@
     --peachfill:#F8DECA; --peachtext:#B4571B;
     --breakfill:#ECEEEA; --breaktext:#9aa39e;
     --weekend:#d39a76;
-    --modring:#4E9486; --parring:#C96A5C; --meetring:#9C6BA3;
+    --modring:#4E9486; --parring:#E0AC2E; --meetring:#C96A5C;
   }
   *{box-sizing:border-box}
   html,body{margin:0}
@@ -77,7 +77,7 @@
   .mk.cel{background:var(--yellow)}
   .mk.exc{background:var(--orange)}
   .mk.ped{background:var(--petrol)}
-  .mk.reh{background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow)}
+  .mkstar{font-style:normal;color:#C49A1F;font-size:7px;line-height:4.5px;display:block}
 
   /* LEGEND CARD (sits in the 12th grid slot) */
   .lgcard{display:flex;flex-direction:column}
@@ -276,7 +276,7 @@ function renderMonth(y,m){
     let cls=sp.type||baseClass(s,dow);
     let extra=sp.parents?' par':(sp.pmt?' pmt':(sp.mod?' mod':''));
     const title=sp.label?(' title="'+sp.label+'"'):'';
-    let dots=(sp.cel?'<i class="mk cel"></i>':'')+(sp.reh?'<i class="mk reh"></i>':'')+(sp.exc?'<i class="mk exc"></i>':'')+(sp.ped?'<i class="mk ped"></i>':'');
+    let dots=(sp.cel?'<i class="mk cel"></i>':'')+(sp.reh?'<i class="mkstar">✦</i>':'')+(sp.exc?'<i class="mk exc"></i>':'')+(sp.ped?'<i class="mk ped"></i>':'');
     let mk=dots?'<span class="markers">'+dots+'</span>':'';
     html+='<td><div class="cell '+cls+extra+'"'+title+'>'+d+mk+'</div></td>';
     if((offset+d)%7===0 && d!==daysInMonth) html+='</tr><tr>';
@@ -290,13 +290,13 @@ function renderMonth(y,m){
 const legendCard =
   '<div class="month lgcard"><h3>LEGEND</h3><div class="lg">'
   +'<span><i class="sw" style="background:var(--mintfill)"></i>Study days</span>'
-  +'<span><i class="sw" style="background:linear-gradient(135deg,var(--mintfill) 55%,#fff 55%);box-shadow:inset 0 0 0 1px var(--cardborder)"></i>Half-study (split / rehearsal)</span>'
+  +'<span><i class="sw" style="background:linear-gradient(135deg,var(--mintfill) 55%,#fff 55%);box-shadow:inset 0 0 0 1px var(--cardborder)"></i>Half-study — core lessons run, no electives</span>'
   +'<span><i class="sw" style="background:var(--goldfill)"></i>Teachers Dev. — no students</span>'
   +'<span><i class="sw" style="background:var(--peachfill)"></i>Public holiday</span>'
   +'<span><i class="sw" style="background:var(--breakfill)"></i>Break / no classes</span>'
   +'<span><i class="rg mod"></i>First day of module</span>'
   +'<span><i class="dot cel"></i>School event</span>'
-  +'<span><i class="dot" style="background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow)"></i>Rehearsal — event staff involved</span>'
+  +'<span><b style="color:#C49A1F;font-size:11px;line-height:0;margin:0 4px 0 2px;flex:0 0 auto">✦</b>Rehearsal — event staff involved</span>'
   +'<span><i class="dot" style="background:var(--orange)"></i>Excursion</span>'
   +'<span><i class="dot" style="background:var(--petrol)"></i>Pedagogical action / electives</span>'
   +'<span><i class="rg par"></i>Parents — event / open</span>'
