@@ -21,7 +21,7 @@
     --peachfill:#F8DECA; --peachtext:#B4571B;
     --breakfill:#ECEEEA; --breaktext:#9aa39e;
     --weekend:#d39a76;
-    --modring:#4E9486; --parring:#C96A5C;
+    --modring:#4E9486; --parring:#C96A5C; --meetring:#9C6BA3;
   }
   *{box-sizing:border-box}
   html,body{margin:0}
@@ -70,6 +70,7 @@
   .weekend{background:transparent;color:var(--weekend)}
   .cell.mod{box-shadow:inset 0 0 0 1.5px var(--modring)}
   .cell.par{box-shadow:inset 0 0 0 2px var(--parring)}
+  .cell.pmt{box-shadow:inset 0 0 0 2px var(--meetring)}
   .empty{background:transparent}
   .markers{position:absolute;bottom:2px;left:0;right:0;display:flex;justify-content:center;gap:2.5px;line-height:0}
   .mk{width:4.5px;height:4.5px;border-radius:50%}
@@ -83,21 +84,22 @@
   .rg{width:13px;height:13px;border-radius:3px;flex:0 0 auto}
   .rg.mod{box-shadow:inset 0 0 0 2px var(--modring)}
   .rg.par{box-shadow:inset 0 0 0 2px var(--parring)}
+  .rg.pmt{box-shadow:inset 0 0 0 2px var(--meetring)}
   .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;margin:0 2.5px}
   .dot.cel{background:var(--yellow)}
 
   /* KEY DATES */
-  .keys{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:9px 0 3px}
+  .keys{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:7px 0 2px}
   .keys h4{font-family:'Geologica';font-weight:600;font-size:10.5px;color:var(--petrol);margin:0 0 5px;
            text-transform:uppercase;letter-spacing:2.5px}
-  .keys ul{margin:0;padding:0;list-style:none;font-size:9.5px;line-height:1.4;color:#56635e}
-  .keys li{padding:2px 0;display:flex;gap:10px;border-bottom:1px solid #f1f0ec}
+  .keys ul{margin:0;padding:0;list-style:none;font-size:9.5px;line-height:1.3;color:#56635e}
+  .keys li{padding:1.5px 0;display:flex;gap:10px;border-bottom:1px solid #f1f0ec}
   .keys li:last-child{border-bottom:none}
   .keys li b{color:var(--petrol);font-weight:600;white-space:nowrap;min-width:96px}
 
   /* FOOTER */
   .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;
-        padding:12px 0 12px;border-top:1px solid var(--hair);font-size:10px;letter-spacing:1px;color:#8a958f}
+        padding:9px 0 10px;border-top:1px solid var(--hair);font-size:10px;letter-spacing:1px;color:#8a958f}
   .foot .sl{font-family:'Geologica';font-weight:500;font-size:11px;letter-spacing:3px;color:var(--petrol);text-transform:uppercase}
   .foot .rt{text-align:right;letter-spacing:1.2px}
   .foot .rt b{color:var(--ink);font-weight:600}
@@ -138,10 +140,10 @@
           <li><b>Oct 12–16</b><span>Autumn break · Teacher Dev Days 12–14</span></li>
           <li><b>Dec 4–5</b><span>Bridge holiday · King's Birthday</span></li>
           <li><b>Dec 21–23</b><span>Teacher Development Days (no students)</span></li>
-          <li><b>Dec 24 – Jan 4</b><span>Winter break · Jan 4 day off</span></li>
+          <li><b>Dec 24 – Jan 4</b><span>Winter break</span></li>
           <li><b>Feb 15–19</b><span>February break · Teacher Dev Days 15–17</span></li>
-          <li><b>Apr 9–10</b><span>Teacher Development Days (no students)</span></li>
-          <li><b>Apr 12–19</b><span>Spring break · Songkran · Apr 19 Teacher Dev</span></li>
+          <li><b>Apr 10 (Sat)</b><span>Teacher Development Day (no students)</span></li>
+          <li><b>Apr 12–20</b><span>Spring break · Songkran · Teacher Dev Days 19–20</span></li>
           <li><b>Jun 3–4</b><span>Queen Suthida's Birthday · Bridge holiday</span></li>
           <li><b>Jun 26</b><span>Teachers Development Day — no school (year wrap-up · team building)</span></li>
         </ul>
@@ -150,12 +152,15 @@
         <h4>Events &amp; celebrations</h4>
         <ul>
           <li><b>Sep 1</b><span>Knowledge Day · Module I begins</span></li>
+          <li><b>Oct 10 (Sat)</b><span>Electives Showcase · Initiation Ceremony (open event, parents)</span></li>
           <li><b>Oct 30</b><span>Halloween</span></li>
           <li><b>Nov 25</b><span>Loy Krathong</span></li>
+          <li><b>Dec 10–11</b><span>Parent meetings</span></li>
           <li><b>Dec 17</b><span>Short study day · Parents' Orientation</span></li>
           <li><b>Dec 18</b><span>New Year celebration (with parents · no classes)</span></li>
           <li><b>Jan 15</b><span>Wai Kru · Teachers' Day</span></li>
-          <li><b>Apr 20</b><span>Short study day · Parents' Orientation</span></li>
+          <li><b>Apr 1–2</b><span>Parent meetings</span></li>
+          <li><b>Apr 9</b><span>Songkran celebration · Electives Showcase (with parents)</span></li>
           <li><b>Jun 25</b><span>Graduation · End of Academic Year (no classes · parents invited)</span></li>
         </ul>
       </div>
@@ -171,8 +176,9 @@
 
 <script>
 const special = {
-  '2026-08-31':{label:"Parents' Orientation (no classes)", type:'closed', parents:true},
+  '2026-08-31':{label:"Parents' Orientation (no classes)", type:'closed', pmt:true},
   '2026-09-01':{label:'Knowledge Day · Module I begins', mod:true, cel:true},
+  '2026-10-10':{label:'Electives Showcase I \u00b7 Kinderville Initiation Ceremony (open event)', cel:true, parents:true},
   '2026-10-12':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-10-13':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-10-14':{label:'Teacher Council / Development Day (no students)', type:'training'},
@@ -181,22 +187,25 @@ const special = {
   '2026-11-25':{label:'Loy Krathong', cel:true},
   '2026-12-04':{label:'Bridge Holiday', type:'holiday'},
   '2026-12-05':{label:"King's Birthday / Father's Day", type:'holiday'},
-  '2026-12-17':{label:"Short study day · Parents' Orientation", type:'short', parents:true},
+  '2026-12-10':{label:'Parent meetings', pmt:true},
+  '2026-12-11':{label:'Parent meetings', pmt:true},
+  '2026-12-17':{label:"Short study day · Parents' Orientation", type:'short', pmt:true},
   '2026-12-18':{label:'New Year celebration (with parents · no classes)', type:'closed', cel:true, parents:true},
   '2026-12-21':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-12-22':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-12-23':{label:'Teacher Council / Development Day (no students)', type:'training'},
-  '2027-01-04':{label:'Day off (school closed)', type:'closed'},
   '2027-01-05':{label:'Module III begins', mod:true},
   '2027-01-15':{label:"Wai Kru · Teachers' Day", cel:true},
   '2027-02-15':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2027-02-16':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2027-02-17':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2027-02-22':{label:'Module IV begins', mod:true},
-  '2027-04-09':{label:'Teacher Council / Development Day (no students)', type:'training'},
-  '2027-04-10':{label:'Teacher Council / Development Day (no students)', type:'training'},
+  '2027-04-01':{label:'Parent meetings', pmt:true},
+  '2027-04-02':{label:'Parent meetings', pmt:true},
+  '2027-04-09':{label:'Songkran celebration · Electives Showcase (with parents · no classes)', type:'closed', cel:true, parents:true},
+  '2027-04-10':{label:'Teacher Development Day (no students)', type:'training'},
   '2027-04-19':{label:'Teachers Development Day (no students)', type:'training'},
-  '2027-04-20':{label:"Short study day · Parents' Orientation", type:'short', parents:true},
+  '2027-04-20':{label:'Teachers Development Day (no students)', type:'training'},
   '2027-04-21':{label:'Module V begins', mod:true},
   '2027-06-03':{label:"Queen Suthida's Birthday", type:'holiday'},
   '2027-06-04':{label:'Bridge Holiday', type:'holiday'},
@@ -239,7 +248,7 @@ function renderMonth(y,m){
     const s=dstr(y,m,d);
     const sp=special[s]||{};
     let cls=sp.type||baseClass(s,dow);
-    let extra=sp.parents?' par':(sp.mod?' mod':'');
+    let extra=sp.parents?' par':(sp.pmt?' pmt':(sp.mod?' mod':''));
     const title=sp.label?(' title="'+sp.label+'"'):'';
     let mk=sp.cel?'<span class="markers"><i class="mk cel"></i></span>':'';
     html+='<td><div class="cell '+cls+extra+'"'+title+'>'+d+mk+'</div></td>';
@@ -260,7 +269,8 @@ const legendCard =
   +'<span><i class="sw" style="background:var(--breakfill)"></i>School break</span>'
   +'<span><i class="rg mod"></i>First day of module</span>'
   +'<span><i class="dot cel"></i>Celebration</span>'
-  +'<span><i class="rg par"></i>Parents invited</span>'
+  +'<span><i class="rg par"></i>Parents — event / open</span>'
+  +'<span><i class="rg pmt"></i>Parents — meetings</span>'
   +'</div></div>';
 
 // August 2026 → June 2027 (11 months) + legend card = 12 grid slots
