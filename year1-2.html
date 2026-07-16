@@ -136,8 +136,8 @@
     </div>
 
     <div class="modstrip">
-      <div class="ms" style="flex:32"><b>Module I</b><span>1 Sep – 16 Oct · 32 days</span></div>
-      <div class="ms" style="flex:48"><b>Module II</b><span>19 Oct – 25 Dec · 48 days</span></div>
+      <div class="ms" style="flex:33"><b>Module I</b><span>31 Aug – 16 Oct · 33 days</span></div>
+      <div class="ms" style="flex:47"><b>Module II</b><span>19 Oct – 25 Dec · 47 days</span></div>
       <div class="ms" style="flex:33"><b>Module III</b><span>4 Jan – 19 Feb · 33 days</span></div>
       <div class="ms" style="flex:35"><b>Module IV</b><span>22 Feb – 9 Apr · 35 days</span></div>
       <div class="ms" style="flex:48"><b>Module V</b><span>19 Apr – 25 Jun · 48 days</span></div>
@@ -164,11 +164,11 @@
       <div>
         <h4>Events &amp; celebrations</h4>
         <ul>
-          <li><b>Aug 31</b><span>Parents' Orientation (no classes)</span></li>
-          <li><b>Sep 1</b><span>Knowledge Day · Module I begins</span></li>
+          <li><b>Aug 28</b><span>Parents' Orientation (no classes)</span></li>
+          <li><b>Aug 31</b><span>Knowledge Day · Module I begins</span></li>
           <li><b>Oct 30</b><span>Halloween</span></li>
           <li><b>Nov 25</b><span>Loy Krathong</span></li>
-          <li><b>Dec 25</b><span>New Year celebration (with parents)</span></li>
+          <li><b>Dec 25</b><span>New Year party with parents (no lessons)</span></li>
           <li><b>Jan 15</b><span>Wai Kru · Teachers' Day</span></li>
           <li><b>Jun 18</b><span>Graduation (no classes · parents invited)</span></li>
         </ul>
@@ -185,8 +185,8 @@
 
 <script>
 const special = {
-  '2026-08-31':{label:"Parents' Orientation (no classes)", type:'closed', pmt:true},
-  '2026-09-01':{label:'Knowledge Day · Module I begins', mod:true, cel:true},
+  '2026-08-28':{label:"Parents' Orientation (no classes)", type:'training', pmt:true},
+  '2026-08-31':{label:'Knowledge Day · Module I begins', mod:true, cel:true},
   '2026-10-12':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-10-13':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-10-19':{label:'Module II begins', mod:true},
@@ -195,7 +195,7 @@ const special = {
   '2026-12-04':{label:'Bridge Holiday', type:'holiday'},
   '2026-12-05':{label:"King's Birthday / Father's Day", type:'holiday'},
   '2026-12-21':{label:'Teacher Council / Development Day (no students)', type:'training'},
-  '2026-12-25':{label:'New Year celebration (with parents)', cel:true, parents:true},
+  '2026-12-25':{label:'New Year party with parents · no lessons', type:'holiday', cel:true, parents:true},
   '2027-01-04':{label:'Module III begins', mod:true},
   '2027-01-15':{label:"Wai Kru · Teachers' Day", cel:true},
   '2027-02-15':{label:'Teacher Council / Development Day (no students)', type:'training'},
@@ -219,7 +219,7 @@ function baseClass(s,dow){
   if(s==='2026-12-04') return 'closed';
   if(inRange(s,'2026-12-26','2027-01-03')) return 'closed';
   if(inRange(s,'2027-04-12','2027-04-16')) return 'closed';
-  if(inRange(s,'2026-09-01','2027-06-25')) return 'study';
+  if(inRange(s,'2026-08-31','2027-06-25')) return 'study';
   return 'weekend';
 }
 
