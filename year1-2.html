@@ -20,6 +20,7 @@
     --goldfill:#FBEDC2; --goldtext:#866713;
     --peachfill:#F8DECA; --peachtext:#B4571B;
     --breakfill:#ECEEEA; --breaktext:#9aa39e;
+    --campfill:#3FB9A8; --camptext:#0A463E;
     --weekend:#d39a76;
     --modring:#4E9486; --parring:#E0AC2E; --meetring:#C96A5C;
   }
@@ -71,6 +72,7 @@
   .training{background:var(--goldfill);color:var(--goldtext);font-weight:600}
   .holiday{background:var(--peachfill);color:var(--peachtext);font-weight:600}
   .closed{background:var(--breakfill);color:var(--breaktext)}
+  .camp{background:var(--campfill);color:var(--camptext);font-weight:700}
   .short{background:linear-gradient(135deg,var(--mintfill) 55%,#fff 55%);color:var(--minttext);font-weight:700}
   .weekend{background:transparent;color:var(--weekend)}
   .cell.mod{box-shadow:inset 0 0 0 1.5px var(--modring)}
@@ -218,9 +220,9 @@ function baseClass(s,dow){
   if(inRange(s,'2026-08-24','2026-08-28')) return 'training';
   if(weekend) return 'weekend';
   if(s==='2026-12-04') return 'closed';
-  if(inRange(s,'2026-10-12','2026-10-16')) return 'closed';
+  if(inRange(s,'2026-10-12','2026-10-16')) return 'camp';
   if(inRange(s,'2026-12-26','2027-01-03')) return 'closed';
-  if(inRange(s,'2027-02-15','2027-02-19')) return 'closed';
+  if(inRange(s,'2027-02-15','2027-02-19')) return 'camp';
   if(inRange(s,'2027-04-12','2027-04-16')) return 'closed';
   if(inRange(s,'2026-08-31','2027-06-25')) return 'study';
   return 'weekend';
@@ -262,6 +264,7 @@ const legendCard =
   +'<span><i class="sw" style="background:var(--goldfill)"></i>Teachers Dev. Days — no school for students</span>'
   +'<span><i class="sw" style="background:var(--peachfill)"></i>Public holiday</span>'
   +'<span><i class="sw" style="background:var(--breakfill)"></i>School break</span>'
+  +'<span><i class="sw" style="background:var(--campfill)"></i>Holiday camp (school closed · camp available)</span>'
   +'<span><i class="rg mod"></i>First day of module</span>'
   +'<span><i class="dot cel"></i>Celebration</span>'
   +'<span><i class="rg par"></i>Parents — event / open</span>'
