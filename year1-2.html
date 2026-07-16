@@ -154,7 +154,7 @@
           <li><b>Aug 24–29</b><span>Teachers Development Days (no students)</span></li>
           <li><b>Oct 12–16</b><span>Camp (autumn break)</span></li>
           <li><b>Oct 13</b><span>King Bhumibol Memorial Day</span></li>
-          <li><b>Dec 4–5</b><span>Bridge holiday · King's Birthday</span></li>
+          <li><b>Dec 7</b><span>King's Birthday · Father's Day — day off (5 Dec = Sat)</span></li>
           <li><b>Dec 19</b><span>Teachers Development Day (no students)</span></li>
           <li><b>Dec 21</b><span>Teacher Development Day (no students)</span></li>
           <li><b>Dec 26 – Jan 3</b><span>Winter break</span></li>
@@ -196,8 +196,7 @@ const special = {
   '2026-10-19':{label:'Module II begins', mod:true},
   '2026-10-30':{label:'Halloween', cel:true},
   '2026-11-25':{label:'Loy Krathong', cel:true},
-  '2026-12-04':{label:'Bridge Holiday', type:'holiday'},
-  '2026-12-05':{label:"King's Birthday / Father's Day", type:'holiday'},
+  '2026-12-07':{label:"King's Birthday / Father's Day — day off (5 Dec = Sat)", type:'holiday'},
   '2026-12-19':{label:'Teachers Development Day (no students)', type:'training'},
   '2026-12-21':{label:'Teacher Council / Development Day (no students)', type:'training'},
   '2026-12-25':{label:'New Year party with parents · no lessons', type:'holiday', cel:true, parents:true},
@@ -219,7 +218,6 @@ function baseClass(s,dow){
   const weekend = (dow===0||dow===6);
   if(inRange(s,'2026-08-24','2026-08-28')) return 'training';
   if(weekend) return 'weekend';
-  if(s==='2026-12-04') return 'closed';
   if(inRange(s,'2026-10-12','2026-10-16')) return 'camp';
   if(inRange(s,'2026-12-26','2027-01-03')) return 'closed';
   if(inRange(s,'2027-02-15','2027-02-19')) return 'camp';
