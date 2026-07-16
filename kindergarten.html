@@ -146,12 +146,12 @@
       <div class="ms" style="flex:84"><b>Trimester 1</b><span>31 Aug – 25 Dec · 84 days</span></div>
       <div class="ms" style="flex:70"><b>Trimester 2</b><span>4 Jan – 9 Apr · 70 days</span></div>
       <div class="ms" style="flex:48"><b>Trimester 3</b><span>19 Apr – 25 Jun · 48 days</span></div>
-      <div class="ms summer" style="flex:47"><b>Summer</b><span>Jun 28 – Aug · childcare</span></div>
+      <div class="ms summer" style="flex:25"><b>Summer</b><span>Jun 28 – Jul · childcare</span></div>
     </div>
 
     <div class="months" id="cal"></div>
 
-    <div class="summerbar">☀&nbsp; <b>Summer childcare</b> — kindergarten stays open through the summer (28 Jun – Aug 2027, holiday camp). New academic year begins late August 2027.</div>
+    <div class="summerbar">☀&nbsp; <b>Summer childcare</b> — kindergarten stays open through July 2027 (holiday camp). Teacher-development &amp; the new academic year follow from late August 2027.</div>
 
     <div class="keys">
       <div>
@@ -159,6 +159,7 @@
         <ul>
           <li><b>Aug 29</b><span>Teachers Development Day (no students)</span></li>
           <li><b>Dec 5 (Sat)</b><span>King's Birthday · Father's Day</span></li>
+          <li><b>Dec 19</b><span>Teachers Development Day (no students)</span></li>
           <li><b>Dec 26 – Jan 3</b><span>Winter break · one week</span></li>
           <li><b>Apr 12–16</b><span>Songkran break · one week</span></li>
           <li><b>Jun 3</b><span>Queen Suthida's Birthday — closed</span></li>
@@ -177,7 +178,7 @@
           <li><b>Jan 15</b><span>Wai Kru · Teachers' Day (themed study day)</span></li>
           <li><b>Jun 18</b><span>Reception Graduation (no classes · parents invited)</span></li>
           <li><b>Jun 25</b><span>Last day of academic year</span></li>
-          <li><b>Jun 28 – Aug</b><span>Summer childcare · holiday camp (open)</span></li>
+          <li><b>Jun 28 – Jul</b><span>Summer childcare · holiday camp (open)</span></li>
         </ul>
       </div>
     </div>
@@ -198,6 +199,7 @@ const special = {
   '2026-11-25':{label:'Loy Krathong (themed study day)', cel:true},
   '2026-12-04':{label:'Kindergarten open · bridge (Y1–2 closed)'},
   '2026-12-05':{label:"King's Birthday / Father's Day", type:'holiday'},
+  '2026-12-19':{label:'Teachers Development Day (no students)', type:'training'},
   '2026-12-25':{label:'New Year party with parents · no lessons', type:'holiday', cel:true, parents:true},
   '2027-01-04':{label:'Trimester 2 begins', mod:true},
   '2027-01-15':{label:"Wai Kru · Teachers' Day (themed study day)", cel:true},
@@ -260,9 +262,9 @@ const legendCard =
   +'<span><i class="rg par"></i>Parents — event / open</span>'
   +'</div></div>';
 
-// August 2026 → August 2027 (13 months) + legend card = 14 grid slots
+// August 2026 → July 2027 (12 months) + legend card = 13 grid slots
 let out='', y=2026, m=8;
-for(let i=0;i<13;i++){ out+=renderMonth(y,m); m++; if(m>12){m=1;y++;} }
+for(let i=0;i<12;i++){ out+=renderMonth(y,m); m++; if(m>12){m=1;y++;} }
 document.getElementById('cal').innerHTML = out + legendCard;
 </script>
 </body>
