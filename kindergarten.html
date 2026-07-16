@@ -169,7 +169,7 @@
       <div>
         <h4>Events &amp; celebrations</h4>
         <ul>
-          <li><b>Aug 24–28</b><span>Kindergarten open · soft start (childcare)</span></li>
+          <li><b>Aug 1–28</b><span>Kindergarten open · childcare (before term)</span></li>
           <li><b>Aug 31</b><span>Start of Year · Trimester 1 begins</span></li>
           <li><b>Oct 30</b><span>Halloween (themed study day)</span></li>
           <li><b>Nov 25</b><span>Loy Krathong (themed study day)</span></li>
@@ -192,11 +192,6 @@
 
 <script>
 const special = {
-  '2026-08-24':{label:'Kindergarten open · soft start (childcare)', type:'care'},
-  '2026-08-25':{label:'Kindergarten open · soft start (childcare)', type:'care'},
-  '2026-08-26':{label:'Kindergarten open · soft start (childcare)', type:'care'},
-  '2026-08-27':{label:'Kindergarten open · soft start (childcare)', type:'care'},
-  '2026-08-28':{label:'Kindergarten open · soft start (childcare)', type:'care'},
   '2026-08-29':{label:'Teachers Development Day (no students)', type:'training'},
   '2026-08-31':{label:'Start of Year · Trimester 1 begins', mod:true, cel:true},
   '2026-10-30':{label:'Halloween (themed study day)', cel:true},
@@ -218,13 +213,10 @@ function inRange(s,a,b){return s>=a && s<=b}
 
 function baseClass(s,dow){
   const weekend = (dow===0||dow===6);
-  if(inRange(s,'2026-08-24','2026-08-28')) return 'care';   // pre-season childcare (soft start)
   if(weekend) return 'weekend';
   if(inRange(s,'2026-12-26','2027-01-03')) return 'closed';  // winter break — one week
   if(inRange(s,'2027-04-12','2027-04-16')) return 'closed';  // Songkran break — one week
-  if(inRange(s,'2026-08-31','2027-06-25')) return 'study';   // academic year
-  if(inRange(s,'2027-06-28','2027-08-31')) return 'care';    // summer childcare / camp
-  return 'weekend';
+  return 'study';   // kindergarten works year-round (study · childcare) — every weekday green
 }
 
 const monthNames=['','JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
@@ -259,8 +251,7 @@ function renderMonth(y,m){
 
 const legendCard =
   '<div class="month lgcard"><h3>LEGEND</h3><div class="lg">'
-  +'<span><i class="sw" style="background:var(--mintfill)"></i>Study days</span>'
-  +'<span><i class="sw" style="background:#EAF4F0"></i>Open · childcare</span>'
+  +'<span><i class="sw" style="background:var(--mintfill)"></i>Study &amp; open days (kindergarten works)</span>'
   +'<span><i class="sw" style="background:var(--peachfill)"></i>Public holiday / no lessons</span>'
   +'<span><i class="sw" style="background:var(--breakfill)"></i>School break</span>'
   +'<span><i class="sw" style="background:var(--goldfill)"></i>Teachers Dev. Day — no school</span>'
