@@ -60,6 +60,9 @@
              color:var(--peachtext);font-size:9.5px;font-weight:600;letter-spacing:.2px;
              display:flex;align-items:center;gap:7px}
   .summerbar b{font-weight:700}
+  .legendbar{display:flex;flex-wrap:wrap;gap:8px 20px;margin:11px 2px 0;padding:11px 2px 0;
+             border-top:1px solid var(--hair);font-size:9.5px;font-weight:500;color:#5e6c67}
+  .legendbar span{display:flex;align-items:center;gap:7px}
   /* MONTHS */
   .months{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:8px 0 0}
   .month{background:var(--cardfill);border:1px solid var(--cardborder);border-radius:12px;
@@ -150,6 +153,16 @@
     </div>
 
     <div class="months" id="cal"></div>
+
+    <div class="legendbar">
+      <span><i class="sw" style="background:var(--mintfill)"></i>Study &amp; open days (kindergarten works)</span>
+      <span><i class="sw" style="background:var(--peachfill)"></i>Public holiday / no lessons</span>
+      <span><i class="sw" style="background:var(--breakfill)"></i>School break</span>
+      <span><i class="sw" style="background:var(--goldfill)"></i>Teachers Dev. Day — no school</span>
+      <span><i class="rg mod"></i>First day of trimester</span>
+      <span><i class="dot cel"></i>Celebration</span>
+      <span><i class="rg par"></i>Parents — event / open</span>
+    </div>
 
     <div class="summerbar">☀&nbsp; <b>Summer childcare</b> — kindergarten stays open through July 2027 (holiday camp). Teacher-development &amp; the new academic year follow from late August 2027.</div>
 
@@ -262,10 +275,10 @@ const legendCard =
   +'<span><i class="rg par"></i>Parents — event / open</span>'
   +'</div></div>';
 
-// August 2026 → July 2027 (12 months) + legend card = 13 grid slots
+// August 2026 → July 2027 (12 months) — clean 4×3 grid; legend is a horizontal bar below
 let out='', y=2026, m=8;
 for(let i=0;i<12;i++){ out+=renderMonth(y,m); m++; if(m>12){m=1;y++;} }
-document.getElementById('cal').innerHTML = out + legendCard;
+document.getElementById('cal').innerHTML = out;
 </script>
 </body>
 </html>
