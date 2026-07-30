@@ -6,7 +6,7 @@
 <title>Kinderville · Academic Calendar 2026–2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Geologica:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Geologica:wght@400;500;600;700&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --petrol:#1C7066;
@@ -109,14 +109,19 @@
   .foot .rt{text-align:right;letter-spacing:1.2px}
   .foot .rt b{color:var(--ink);font-weight:600}
 
+  /* RU page: Albert Sans has no Cyrillic — Onest carries the body text */
+  .page.ru{font-family:'Onest','Albert Sans',-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+
   @media print{
     @page{size:A4 portrait;margin:0}
     body{background:#fff;padding:0}
-    .page{box-shadow:none;width:210mm;min-height:286mm}
+    .page{box-shadow:none;width:210mm;height:296mm;min-height:0;overflow:hidden;page-break-after:always}
+    .page:last-of-type{page-break-after:auto}
+    .inner{zoom:.96}
     *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   }
 </style>
-<style>body{background:#fff!important;padding:0!important}.page{box-shadow:none!important;min-height:auto!important;padding-bottom:12px!important}</style></head>
+<style>@media screen{body{background:#fff!important;padding:0!important}.page{box-shadow:none!important;min-height:auto!important;padding-bottom:12px!important}.page+.page{border-top:1px solid #e4e7e4;margin-top:10px;padding-top:30px!important}}</style></head>
 <body>
 
 <div class="page">
@@ -191,6 +196,76 @@
   </div>
 </div>
 
+<div class="page ru">
+  <span class="bg bg1"></span><span class="bg bg2"></span>
+  <div class="inner">
+
+    <div class="head">
+      <img class="logo" id="logo-ru" alt="Kinderville Nova — International School">
+      <div class="meta">Международная школа<b>Начальная школа · Year 2–6</b></div>
+    </div>
+
+    <div class="titlewrap">
+      <h1>Учебный календарь</h1>
+      <div class="yrs">2026 – 2027<small>B.E. 2569 / 2570</small></div>
+    </div>
+
+    <div class="modstrip">
+      <div class="ms" style="flex:29"><b>Модуль I</b><span>1 сен – 9 окт · 29 дней</span></div>
+      <div class="ms" style="flex:43"><b>Модуль II</b><span>19 окт – 18 дек · 43 дня</span></div>
+      <div class="ms" style="flex:29"><b>Модуль III</b><span>5 янв – 12 фев · 29 дней</span></div>
+      <div class="ms" style="flex:34"><b>Модуль IV</b><span>22 фев – 9 апр · 34 дня</span></div>
+      <div class="ms" style="flex:45"><b>Модуль V</b><span>21 апр – 25 июн · 45 дней</span></div>
+    </div>
+
+    <div class="months" id="cal-ru"></div>
+
+    <div class="keys">
+      <div>
+        <h4>Каникулы и неучебные дни</h4>
+        <ul>
+          <li><b>24–28 авг</b><span>Методические дни учителей (без учеников)</span></li>
+          <li><b>10 окт (сб)</b><span>Методический день учителей (без учеников)</span></li>
+          <li><b>12–16 окт</b><span>Осенние каникулы · метод. дни 12–13</span></li>
+          <li><b>13 окт</b><span>День памяти короля Пхумипона</span></li>
+          <li><b>7 дек</b><span>День рождения короля · День отца — выходной (5 дек = сб)</span></li>
+          <li><b>19 дек</b><span>Методический день учителей (без учеников)</span></li>
+          <li><b>21–22 дек</b><span>Методические дни учителей (без учеников)</span></li>
+          <li><b>23 дек – 4 янв</b><span>Зимние каникулы</span></li>
+          <li><b>15–19 фев</b><span>Февральские каникулы · метод. дни 15–17</span></li>
+          <li><b>10 апр (сб)</b><span>Методический день учителей (без учеников)</span></li>
+          <li><b>12–20 апр</b><span>Весенние каникулы · Сонгкран · метод. дни 19–20</span></li>
+          <li><b>3–4 июн</b><span>День рождения королевы Сутхиды · длинные выходные</span></li>
+          <li><b>26 июн</b><span>Методический день — без занятий (итоги года · тимбилдинг)</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>События и праздники</h4>
+        <ul>
+          <li><b>31 авг</b><span>Ориентационная встреча для родителей (без уроков)</span></li>
+          <li><b>1 сен</b><span>День знаний · начало Модуля I</span></li>
+          <li><b>9 окт (пт)</b><span>Презентация элективов · Посвящение в ученики (открытое событие, с родителями · без уроков)</span></li>
+          <li><b>30 окт</b><span>Хэллоуин</span></li>
+          <li><b>25 ноя</b><span>Лой Кратонг</span></li>
+          <li><b>10–11 дек</b><span>Родительские собрания</span></li>
+          <li><b>18 дек</b><span>Новогодние утренники (с родителями · без уроков)</span></li>
+          <li><b>15 янв</b><span>Вай Кру · День учителя</span></li>
+          <li><b>12 фев</b><span>Мини-презентация элективов · выставка (сокращённый день · с родителями)</span></li>
+          <li><b>1–2 апр</b><span>Родительские собрания</span></li>
+          <li><b>9 апр</b><span>Праздник Сонгкран · Презентация элективов (с родителями)</span></li>
+          <li><b>25 июн</b><span>Выпускной · окончание учебного года (без уроков · родители приглашены)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="sl">Kinderville Nova</span>
+      <span class="rt"><b>kindervilleschool.com</b> &nbsp;·&nbsp; Пхукет, Таиланд</span>
+    </div>
+
+  </div>
+</div>
+
 <script>
 const special = {
   '2026-12-31':{label:"New Year's Eve", type:'holiday'},
@@ -250,15 +325,71 @@ function baseClass(s,dow){
   return 'weekend';
 }
 
-const monthNames=['','JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+// Russian tooltip labels for the RU page (dates without an entry fall back to the EN label)
+const labelsRu = {
+  '2026-12-31':'Канун Нового года',
+  '2027-01-01':'Новый год',
+  '2027-04-13':'Сонгкран (тайский Новый год)',
+  '2027-04-14':'Сонгкран (тайский Новый год)',
+  '2027-04-15':'Сонгкран (тайский Новый год)',
+  '2026-08-31':'Ориентационная встреча для родителей (без уроков)',
+  '2026-09-01':'День знаний · начало Модуля I',
+  '2026-10-09':'Презентация элективов · Посвящение в ученики (открытое событие · без уроков)',
+  '2026-10-10':'Методический день учителей (без учеников)',
+  '2026-10-12':'Педсовет / методический день (без учеников)',
+  '2026-10-13':'День памяти короля Пхумипона · методический день (без учеников)',
+  '2026-10-19':'Начало Модуля II',
+  '2026-10-30':'Хэллоуин',
+  '2026-11-25':'Лой Кратонг',
+  '2026-12-07':'День рождения короля · День отца — выходной (5 дек = сб)',
+  '2026-12-10':'Родительские собрания',
+  '2026-12-11':'Родительские собрания',
+  '2026-12-18':'Новогодние утренники (с родителями · без уроков)',
+  '2026-12-19':'Методический день учителей (без учеников)',
+  '2026-12-21':'Педсовет / методический день (без учеников)',
+  '2026-12-22':'Педсовет / методический день (без учеников)',
+  '2027-01-05':'Начало Модуля III',
+  '2027-01-15':'Вай Кру · День учителя',
+  '2027-02-12':'Мини-презентация элективов · выставка (сокращённый день · с родителями)',
+  '2027-02-15':'Педсовет / методический день (без учеников)',
+  '2027-02-16':'Педсовет / методический день (без учеников)',
+  '2027-02-17':'Педсовет / методический день (без учеников)',
+  '2027-02-22':'Начало Модуля IV',
+  '2027-04-01':'Родительские собрания',
+  '2027-04-02':'Родительские собрания',
+  '2027-04-09':'Праздник Сонгкран · Презентация элективов (с родителями · без уроков)',
+  '2027-04-10':'Методический день учителей (без учеников)',
+  '2027-04-19':'Методический день учителей (без учеников)',
+  '2027-04-20':'Методический день учителей (без учеников)',
+  '2027-04-21':'Начало Модуля V',
+  '2027-06-03':'День рождения королевы Сутхиды',
+  '2027-06-04':'Выходной-мостик',
+  '2027-06-25':'Выпускной · окончание учебного года (родители приглашены · без уроков)',
+  '2027-06-26':'Методический день · итоги года и тимбилдинг (без учеников)',
+};
 
-function renderMonth(y,m){
+const L_EN = {
+  months:['','JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'],
+  dows:['Mo','Tu','We','Th','Fr','Sa','Su'],
+  label:s=>(special[s]||{}).label,
+  legendTitle:'LEGEND',
+  legend:['Study days','Half-study day','Teachers Dev. Days — no school for students','Public holiday','School break','First day of module','Celebration','Parents — event / open','Parents — meetings'],
+};
+const L_RU = {
+  months:['','ЯНВАРЬ','ФЕВРАЛЬ','МАРТ','АПРЕЛЬ','МАЙ','ИЮНЬ','ИЮЛЬ','АВГУСТ','СЕНТЯБРЬ','ОКТЯБРЬ','НОЯБРЬ','ДЕКАБРЬ'],
+  dows:['Пн','Вт','Ср','Чт','Пт','Сб','Вс'],
+  label:s=>labelsRu[s]||(special[s]||{}).label,
+  legendTitle:'ЛЕГЕНДА',
+  legend:['Учебные дни','Сокращённый учебный день','Метод. дни учителей — дети не учатся','Государственный праздник','Каникулы','Первый день модуля','Праздник · событие','Родители — событие / открытый день','Родители — собрания'],
+};
+
+function renderMonth(y,m,L){
   const startDow = new Date(y,m-1,1).getDay();
   const offset = (startDow===0)?6:startDow-1;
   const daysInMonth = new Date(y,m,0).getDate();
 
-  let html = '<div class="month"><h3>'+monthNames[m]+' <span>'+y+'</span></h3><table><thead><tr>';
-  ['Mo','Tu','We','Th','Fr','Sa','Su'].forEach((d,i)=>html+='<th'+(i>=5?' class="we"':'')+'>'+d+'</th>');
+  let html = '<div class="month"><h3>'+L.months[m]+' <span>'+y+'</span></h3><table><thead><tr>';
+  L.dows.forEach((d,i)=>html+='<th'+(i>=5?' class="we"':'')+'>'+d+'</th>');
   html+='</tr></thead><tbody><tr>';
 
   for(let i=0;i<offset;i++) html+='<td><div class="cell empty"></div></td>';
@@ -269,7 +400,8 @@ function renderMonth(y,m){
     const sp=special[s]||{};
     let cls=sp.type||baseClass(s,dow);
     let extra=sp.parents?' par':(sp.pmt?' pmt':(sp.mod?' mod':''));
-    const title=sp.label?(' title="'+sp.label+'"'):'';
+    const lab=L.label(s);
+    const title=lab?(' title="'+lab+'"'):'';
     let mk=sp.cel?'<span class="markers"><i class="mk cel"></i></span>':'';
     html+='<td><div class="cell '+cls+extra+'"'+title+'>'+d+mk+'</div></td>';
     if((offset+d)%7===0 && d!==daysInMonth) html+='</tr><tr>';
@@ -280,23 +412,29 @@ function renderMonth(y,m){
   return html;
 }
 
-const legendCard =
-  '<div class="month lgcard"><h3>LEGEND</h3><div class="lg">'
-  +'<span><i class="sw" style="background:var(--mintfill)"></i>Study days</span>'
-  +'<span><i class="sw" style="background:linear-gradient(135deg,var(--mintfill) 55%,#fff 55%);box-shadow:inset 0 0 0 1px var(--cardborder)"></i>Half-study day</span>'
-  +'<span><i class="sw" style="background:var(--goldfill)"></i>Teachers Dev. Days — no school for students</span>'
-  +'<span><i class="sw" style="background:var(--peachfill)"></i>Public holiday</span>'
-  +'<span><i class="sw" style="background:var(--breakfill)"></i>School break</span>'
-  +'<span><i class="rg mod"></i>First day of module</span>'
-  +'<span><i class="dot cel"></i>Celebration</span>'
-  +'<span><i class="rg par"></i>Parents — event / open</span>'
-  +'<span><i class="rg pmt"></i>Parents — meetings</span>'
-  +'</div></div>';
+function legendCard(L){
+  const sw=['background:var(--mintfill)',
+            'background:linear-gradient(135deg,var(--mintfill) 55%,#fff 55%);box-shadow:inset 0 0 0 1px var(--cardborder)',
+            'background:var(--goldfill)','background:var(--peachfill)','background:var(--breakfill)'];
+  let html='<div class="month lgcard"><h3>'+L.legendTitle+'</h3><div class="lg">';
+  sw.forEach((s,i)=>html+='<span><i class="sw" style="'+s+'"></i>'+L.legend[i]+'</span>');
+  html+='<span><i class="rg mod"></i>'+L.legend[5]+'</span>'
+       +'<span><i class="dot cel"></i>'+L.legend[6]+'</span>'
+       +'<span><i class="rg par"></i>'+L.legend[7]+'</span>'
+       +'<span><i class="rg pmt"></i>'+L.legend[8]+'</span>'
+       +'</div></div>';
+  return html;
+}
 
-// August 2026 → June 2027 (11 months) + legend card = 12 grid slots
-let out='', y=2026, m=8;
-for(let i=0;i<11;i++){ out+=renderMonth(y,m); m++; if(m>12){m=1;y++;} }
-document.getElementById('cal').innerHTML = out + legendCard;
+// August 2026 → June 2027 (11 months) + legend card = 12 grid slots, per language
+function renderCal(id,L){
+  let out='', y=2026, m=8;
+  for(let i=0;i<11;i++){ out+=renderMonth(y,m,L); m++; if(m>12){m=1;y++;} }
+  document.getElementById(id).innerHTML = out + legendCard(L);
+}
+renderCal('cal',L_EN);
+renderCal('cal-ru',L_RU);
+document.getElementById('logo-ru').src = document.querySelector('.logo').src;
 </script>
 </body>
 </html>
